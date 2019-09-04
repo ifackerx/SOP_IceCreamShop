@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import IceCream.IceCreamShop.App;
 /**
  * Hello world!
  *
@@ -19,6 +20,6 @@ public static void main(String[] args) {
 	}
 	@RequestMapping("/")
 	String home() {
-		return "Hello World!";
+		return "IceCreamShop";
 }
 }

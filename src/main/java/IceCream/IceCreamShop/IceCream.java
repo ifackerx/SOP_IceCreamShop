@@ -1,12 +1,18 @@
 package IceCream.IceCreamShop;
 
-public class IceCream {
+public abstract class IceCream {
 	private int id;
 	private String Taste;
 	private String Topping;
 	private String type;
 	private int price;
 	
+	public IceCream(String Taste, String Topping, String type,int price) {
+		this.Taste = Taste;
+		this.Topping = Topping;
+		this.type = type;
+		this.price = price;
+	}
 	
 	public String getType() {
 		return type;
