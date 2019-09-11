@@ -1,50 +1,66 @@
 package IceCream.IceCreamShop;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Chocolate implements IceCream{
+	int id;
+	float price;
+	String topping;
 	
+	
+	public Chocolate() {
+		
+	}
+	
+	public Chocolate(int id, float price, String topping) {
+		this.price = price;
+		this.topping = topping;
+	}
+
 	public void make() {
 		ScoopSingleton scoop = ScoopSingleton.getInstance();
 		scoop.setMaterial("Aluminiam");
 		scoop.setSize('M');
 		scoop.setType("disher");
-		
-		System.out.print("ok");// TODO Auto-generated method stub
-		
+		System.out.print("We are going to make your VANILA");
 	}
-
 	public void setPrice(float price) {
-		// TODO Auto-generated method stub
-		
+		this.price = price;
 	}
 
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return price;
 	}
 
 	public void addTopping(String topping) {
-		// TODO Auto-generated method stub
-		
+		this.topping = topping;
 	}
 
 	public String getTopping() {
-		// TODO Auto-generated method stub
-		return null;
+		return topping;
 	}
 
 	public void setID(int id) {
-		// TODO Auto-generated method stub
-		
+		this.id = id;
 	}
 
 	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 
 	public void order() {
-		// TODO Auto-generated method stub
-		
+		String msg;
+//		String path = File.separator+"Users"+File.separator+"pls"+File.separator+"1.html";
+		try {
+			FileWriter w = new FileWriter("output.txt");
+			msg = "Taste : "+" vanila "+"Topping : "+this.getTopping();
+			w.write(msg);
+			w.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

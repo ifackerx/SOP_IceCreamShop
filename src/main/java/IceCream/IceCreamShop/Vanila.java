@@ -1,6 +1,8 @@
 package IceCream.IceCreamShop;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -9,7 +11,7 @@ public class Vanila implements IceCream{
 	int id;
 	float price;
 	String topping;
-
+	
 	
 	public Vanila() {
 		
@@ -52,16 +54,19 @@ public class Vanila implements IceCream{
 	}
 
 	public void order() {
+		String msg;
 //		String path = File.separator+"Users"+File.separator+"pls"+File.separator+"1.html";
 		try {
 			FileWriter w = new FileWriter("output.txt");
-			w.write("hello");
+			msg = "Taste : "+" vanila "+"Topping : "+this.getTopping();
+			w.write(msg);
 			w.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
+
 
 }
